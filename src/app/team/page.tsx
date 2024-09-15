@@ -1,20 +1,25 @@
 /* eslint-disable @next/next/no-img-element */
 import '@/styles/home.css';
 
-export default function Home() {
+export default function Team() {
   return (
     <main className="h-full justify-center lg:justify-between flex flex-col-reverse lg:flex-row items-center relative">
       <div className="flex flex-col gap-4 max-w-[700px] lg:w-[55%] z-10">
-        <h1 className="text-4xl lg:text-5xl font-bold">
-          <span className="hul">PACE</span> IN THE <br></br> CLASSROOM
+        <h1 className="text-4xl lg:text-5xl ">
+          TEAM <br></br> <span className="hul tracking-widest font-bold">KUGELBLITZ</span>
         </h1>
-        <p className="text-sm sm:text-base w-fit lg:text-lg opacity-80">
-          This project takes the gap between the complexity of information and public understanding
-          into consideration and focuses on presenting the data in a more interesting, digestible
-          and classroom-friendly manner.
+        <h1 className="text-xl lg:text-2xl ">
+          FROM <span className="text-3xl lg:text-4xl font-bold">BANGLADESH </span>
+        </h1>
+        <p className="text-sm sm:text-base w-fit  opacity-80">
+          The PACE spacecraft is steadily sending data and high-resolution observations of Earth
+          &apos;s oceans, aerosols, and clouds. We, a few curious undergraduate students from
+          Bangladesh, made it our mission to turn this data into digestible chunks for better
+          understanding. Presenting to you, team KUGLEBLITZ, where passion meets necessity,
+          curiosity becomes a journey to impact globally.
         </p>
         <div className="mt-2">
-          <button className="btn-prim z-10">Play Game</button>
+          <button className="btn-prim z-10">Visit</button>
         </div>
       </div>
       <div className="lg:w-2/5 relative lg:h-full max-h-[60vh] lg:max-h-[auto]">
