@@ -22,7 +22,7 @@ body {
   font-family: 'K2D';
   background: url(/image/bg.jpg);
   background-size: cover;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   color: white;
 }
 
@@ -42,6 +42,9 @@ h6 {
 }
 
 @layer utilities {
+  .abs-cent {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
   .text-balance {
     text-wrap: balance;
   }
@@ -51,8 +54,20 @@ h6 {
 
   .b-line::before {
     content: '';
+    @apply w-1/3 -bottom-1 left-1/2 bg-transparent -translate-x-1/2 absolute h-0.5 rounded-full transition;
+  }
+
+  .b-line-actv::before,
+  .b-line:hover::before {
+    content: '';
     @apply w-1/3 -bottom-1 left-1/2 bg-white/50 -translate-x-1/2 absolute h-0.5 rounded-full transition;
   }
+
+  .b-line:active::before {
+    content: '';
+    @apply scale-x-150 -bottom-1 left-1/2 bg-white/50 -translate-x-1/2 absolute h-0.5 rounded-full transition;
+  }
+
   .hul {
     @apply relative;
   }
@@ -62,6 +77,16 @@ h6 {
   }
 
   .btn-prim {
-    @apply text-black bg-white py-3 px-8 rounded-full shadow-md transition hover:bg-white/80 active:shadow-none active:scale-90;
+    @apply inline-block text-black bg-white py-3 px-8 rounded-full shadow-md transition hover:bg-white/80 active:shadow-none active:scale-90;
   }
+}
+
+html {
+  @apply overflow-x-clip;
+}
+body {
+  @apply overflow-x-clip max-w-[100vw] h-auto;
+}
+.cont {
+  @apply w-[90vw] shrink-0 flex flex-col h-auto lg:h-auto  my-[5vh] xl:my-[7.5vh] min-h-[90vh] xl:w-[85vw] xl:min-h-[85vh] backdrop-blur-3xl bg-white/10 rounded-lg shadow-lg p-8 lg:p-12;
 }
