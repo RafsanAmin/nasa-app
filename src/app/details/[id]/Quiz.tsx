@@ -19,7 +19,7 @@ const Quiz = ({ Data, indexD }: { Data: (typeof StudyMaterialData)[0]; indexD: n
   const setAns = (quesNo: number, choice: number) => {
     setChoice((s) => {
       const copy = [...s];
-      s[quesNo] = choice;
+      copy[quesNo] = choice;
       return copy;
     });
   };
@@ -34,8 +34,6 @@ const Quiz = ({ Data, indexD }: { Data: (typeof StudyMaterialData)[0]; indexD: n
 
     return score;
   };
-
-  console.log(choice);
 
   return (
     <div className="my-16 text-base md:text-lg bg-white/10 backdrop-blur-lg p-8 md:p-16 rounded-xl shadow-md flex flex-col items-center">
