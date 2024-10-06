@@ -4,9 +4,10 @@ import React, { useState } from 'react';
 
 type props = {
   images: string[];
+  tight?: boolean;
 };
 
-const Carousel = ({ images }: props) => {
+const Carousel = ({ images, tight }: props) => {
   const count = images.length;
   const [state, setState] = useState<number>(0);
 
@@ -33,7 +34,13 @@ const Carousel = ({ images }: props) => {
             {images.map((url, index) => (
               <div key={index} className="h-full w-full grid place-items-center">
                 <img
-                  className="flex-1 rounded-xl border-4 border-white h-full max-h-[60vh] w-full object-cover my-auto"
+                  className={
+                    'flex-1 rounded-xl border-4 cursor-pointer border-white bg-white h-full max-h-[60vh] w-full my-auto ' +
+                    (tight ? 'object-contain' : 'object-cover')
+                  }
+                  onClick={() => {
+                    window.open(url, '_blank');
+                  }}
                   src={url}
                   alt=""
                 />

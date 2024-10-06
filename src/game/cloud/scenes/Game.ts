@@ -183,7 +183,7 @@ export class Game extends Scene {
       color: '#000000',
     });
 
-    this.countdown = this.add.text(50, 50, '🕛 01:00', {
+    this.countdown = this.add.text(50, 50, '🕛 02:00', {
       fontSize: '25px',
       fontFamily: 'K2D',
       color: '#000000',
@@ -200,7 +200,8 @@ export class Game extends Scene {
         const seconds = Math.floor((elapsedTime / (1000 * 60) - minutes) * 60);
 
         if (elapsedTime <= 0) {
-          this.changeScene(true);
+          this.changeScene(this.scoreCount !== 0);
+          this.setStorage();
         } else {
           this.countdown.setText('🕛 ' + _L0(minutes) + ':' + _L0(seconds));
         }
@@ -210,6 +211,14 @@ export class Game extends Scene {
     this.input.addListener('pointerdown', () => {
       this.createShoot();
     });
+  }
+
+  setStorage() {
+    localStorage.setItem('2', `${this.scoreCount}`);
+    localStorage.setItem(
+      '2_hs',
+      `${Math.max(this.scoreCount, Number(localStorage.getItem('1_2_hs')))}`
+    );
   }
   update(): void {
     if (this.healthCount < 0) {

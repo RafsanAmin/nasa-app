@@ -3,7 +3,7 @@ import config from '@/game/config/config';
 import _L0 from '@/util/leadingzero';
 import { Scene } from 'phaser';
 
-const TIME = 10;
+const TIME = 60;
 const POINT_LIMIT = 25;
 const OBST_LIMIT = 5;
 
@@ -156,12 +156,21 @@ export class Game2 extends Scene {
         const seconds = Math.floor((elapsedTime / (1000 * 60) - minutes) * 60);
 
         if (elapsedTime <= 0) {
+          this.setStorage();
           this.changeScene(this.scoreCount !== 0);
         } else {
           this.countdown.setText('Timer: ' + _L0(minutes) + ':' + _L0(seconds));
         }
       },
     });
+  }
+
+  setStorage() {
+    localStorage.setItem('1_2', `${this.scoreCount}`);
+    localStorage.setItem(
+      '1_2_hs',
+      `${Math.max(this.scoreCount, Number(localStorage.getItem('1_2_hs')))}`
+    );
   }
   update(): void {
     // move bg

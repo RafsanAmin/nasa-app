@@ -5,7 +5,7 @@ import React from 'react';
 const ques = StudyMaterialData[0].questions;
 type T = (typeof ques)[0];
 
-const MCQ = ({
+export const MCQ = ({
   q,
   chosen,
   setChoose,

@@ -95,7 +95,7 @@ export class GameOver2 extends Scene {
     button.setInteractive();
     button.on('pointerdown', () => {
       if (this.complete) {
-        this.scene.start('Game2');
+        window.location.href = '/game/ocean/map1';
       } else {
         this.scene.start('Game2');
       }

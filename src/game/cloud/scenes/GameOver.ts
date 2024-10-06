@@ -34,7 +34,7 @@ export class GameOver extends Scene {
       .text(
         config.width / 2,
         config.height - 185,
-        !this.complete ? '😔 Game Over. Finish Level 1 to go to next.' : '🏆 Lvl 1 Completed!',
+        !this.complete ? '😔 Game Over. Finish Level to go to next.' : '🏆 Lvl 1 Completed!',
         {
           fontFamily: 'K2D',
           fontSize: 24,
@@ -96,7 +96,7 @@ export class GameOver extends Scene {
     button.setInteractive();
     button.on('pointerdown', () => {
       if (this.complete) {
-        this.scene.start('Game2');
+        window.location.href = '/game/ocean/map2';
       } else {
         this.scene.start('Game');
       }
