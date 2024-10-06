@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import './globals.css';
-import Navbar from '@/components/layout/Navbar';
+import NextTopLoader from 'nextjs-toploader';
 
 export const metadata: Metadata = {
   title: 'KugelBlitz',
@@ -15,12 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased grid justify-center min-h-screen`}>
-        <main className="cont">
-          <Navbar />
-          {children}
-        </main>
-      </body>
+      <NextTopLoader color="#ffffff50" />
+      <body className={`antialiased grid justify-center min-h-screen`}>{children}</body>
     </html>
   );
 }

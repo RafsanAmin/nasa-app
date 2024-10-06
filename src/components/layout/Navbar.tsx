@@ -34,7 +34,7 @@ const Navbar = () => {
       >
         <NavLink href="/">Home</NavLink>
         <NavLink href="/game">Play Game</NavLink>
-        <NavLink href="/about">About PACE</NavLink>
+        <NavLink href="/details">About PACE</NavLink>
         <NavLink href="/team">Team Info</NavLink>
       </ul>
       <button className="lg:hidden" onClick={() => setOpen((s) => !s)}>
