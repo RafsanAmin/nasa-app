@@ -1,6 +1,8 @@
 import React from 'react';
-import Game from '@/game/ocean/OceanGame';
+import dynamic from 'next/dynamic';
 import Main from '@/components/layout/Main';
+
+const Game = dynamic(() => import('@/game/ocean/OceanGame'), { ssr: false });
 
 const Page = () => {
   return (
@@ -11,7 +13,5 @@ const Page = () => {
     </Main>
   );
 };
-
-export const dynamic = 'force-dynamic';
 
 export default Page;

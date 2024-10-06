@@ -1,6 +1,8 @@
 import Main from '@/components/layout/Main';
 import React from 'react';
-import Game from '@/game/cloud/CloudGame';
+import dynamic from 'next/dynamic';
+
+const Game = dynamic(() => import('@/game/cloud/CloudGame'), { ssr: false });
 
 const Page = () => {
   return (
