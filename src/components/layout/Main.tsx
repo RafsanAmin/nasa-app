@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Navbar from './Navbar';
 
 const Main = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="cont">
-      <Navbar />
+      <Suspense>
+        <Navbar />
+      </Suspense>
       {children}
     </main>
   );
