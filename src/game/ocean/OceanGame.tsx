@@ -3,6 +3,7 @@ import { forwardRef, useEffect, useLayoutEffect, useRef } from 'react';
 import StartGame from '@/game/ocean/main';
 import { EventBus } from '@/game/ocean/EventBus';
 import { useRouter } from 'next/navigation';
+import { pfactor, scalefactor } from '../config/config';
 
 export interface IRefPhaserGame {
   game: Phaser.Game | null;
@@ -59,7 +60,14 @@ const PhaserGame = forwardRef<IRefPhaserGame, IProps>(function PhaserGame(
 
   return (
     <>
-      <div id="game-container"></div>
+      <div
+        style={{
+          transform: `scale(${scalefactor})`,
+          transformOrigin: 'top left',
+          padding: `${pfactor[0]}px 0 0 ${pfactor[1]}px `,
+        }}
+        id="game-container"
+      ></div>
     </>
   );
 });

@@ -153,5 +153,5 @@ body {
   @apply overflow-x-clip max-w-[100vw] h-auto;
 }
 .cont {
-  @apply w-[85vw] mx-auto shrink-0 flex flex-col h-auto lg:h-auto  my-[5vh] xl:my-[7.5vh] min-h-[90vh] xl:w-[85vw] xl:min-h-[85vh] backdrop-blur-3xl bg-white/10 rounded-lg shadow-lg p-8 lg:p-12;
+  @apply w-[85vw] mx-auto mx-auto shrink-0 flex flex-col h-auto lg:h-auto  my-[5vh] xl:my-[7.5vh] min-h-[90vh] xl:w-[85vw] mx-auto xl:min-h-[85vh] backdrop-blur-3xl bg-white/10 rounded-lg shadow-lg p-8 lg:p-12;
 }

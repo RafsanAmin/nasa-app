@@ -49,6 +49,8 @@ export class Preloader extends Scene {
       frameWidth: 225,
       frameHeight: 216,
     });
+
+    this.load.video('lvl', '0001-0060.mp4');
   }
 
   create() {

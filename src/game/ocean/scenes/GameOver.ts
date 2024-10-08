@@ -58,7 +58,7 @@ export class GameOver extends Scene {
       .text(
         config.width / 2,
         config.height - 220,
-        'Highest Score:' + (localStorage.getItem('1_1_hs') || '0'),
+        'Highest Score: ' + (localStorage.getItem('1_1_hs') || '0'),
         {
           fontFamily: 'K2D',
           fontSize: 16,

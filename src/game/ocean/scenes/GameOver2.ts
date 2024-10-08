@@ -58,7 +58,7 @@ export class GameOver2 extends Scene {
       .text(
         config.width / 2,
         config.height - 220,
-        'Highest Score:' + (localStorage.getItem('1_1') || '0'),
+        'Highest Score: ' + (localStorage.getItem('1_2') || '0'),
         {
           fontFamily: 'K2D',
           fontSize: 16,
@@ -95,7 +95,15 @@ export class GameOver2 extends Scene {
     button.setInteractive();
     button.on('pointerdown', () => {
       if (this.complete) {
-        window.location.href = '/game/ocean/map1';
+        if (!localStorage.getItem('2')) {
+          window.location.href = '/game/cloud';
+        } else if (!localStorage.getItem('map1')) {
+          window.location.href = '/game/ocean/map1';
+        } else if (!localStorage.getItem('map2')) {
+          window.location.href = '/game/ocean/map2';
+        } else {
+          window.location.href = '/game/stat';
+        }
       } else {
         this.scene.start('Game2');
       }

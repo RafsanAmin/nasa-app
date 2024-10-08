@@ -43,15 +43,25 @@ export class Game extends Scene {
   }
 
   addPlayer() {
-    this.player = this.physics.add.sprite(config.width / 2, config.height / 2, 'player');
-    this.player.setSize(125, 216);
+    this.player = this.physics.add.sprite(config.width / 2 - 100, config.height / 2, 'player');
+    this.player.setSize(110, 195);
     this.player.setScale(0.3, 0.3);
+
     this.createAnim(this.player, 'player');
     // this.player.setCollideWorldBounds(true);
 
-    this.player.on('drag', (p, x, y) => {
-      this.player.y = y;
-    });
+    this.player.setInteractive({ draggable: true });
+    this.player.on('drag', (pointer, dragX, dragY) =>
+      this.player.setPosition(this.player.x, dragY)
+    );
+
+    this.input.on(
+      'pointermove',
+      function (pointer) {
+        this.player.setPosition(this.player.x, pointer.y);
+      },
+      this
+    );
   }
 
   createPoints() {
@@ -87,7 +97,7 @@ export class Game extends Scene {
     // set baisc
 
     rect.setScale(0.55, 0.55);
-    rect.setSize(210, 100);
+    rect.setSize(160, 60);
     this.createAnim(rect, name);
     rect.setFlipX(true);
 
@@ -164,9 +174,7 @@ export class Game extends Scene {
     // set score
     this.score.setText('Score: ' + String(this.scoreCount));
 
-    console.log(seed);
     // move player on move
-    this.player.setPosition(this.player.x, this.game.input.mousePointer.y);
 
     // create points and reposite if ends
     if (this.pointCount < POINT_LIMIT) {

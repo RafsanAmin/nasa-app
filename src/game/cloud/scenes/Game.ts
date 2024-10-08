@@ -53,15 +53,24 @@ export class Game extends Scene {
   }
 
   addPlayer() {
-    this.player = this.physics.add.sprite(config.width / 2, config.height / 2, 'player');
+    this.player = this.physics.add.sprite(config.width / 2 - 100, config.height / 2, 'player');
     this.player.setSize(160, 130);
     this.player.setScale(0.4, 0.4);
     this.createAnim(this.player, 'player');
     // this.player.setCollideWorldBounds(true);
 
-    this.player.on('drag', (p, x, y) => {
-      this.player.y = y;
-    });
+    this.player.setInteractive({ draggable: true });
+    this.player.on('drag', (pointer, dragX, dragY) =>
+      this.player.setPosition(this.player.x, dragY)
+    );
+
+    this.input.on(
+      'pointermove',
+      function (pointer) {
+        this.player.setPosition(this.player.x, pointer.y);
+      },
+      this
+    );
   }
   addHealthBar() {
     this.add.rectangle(config.width / 2, 50, 150, 20, 0xff0000);
@@ -72,7 +81,7 @@ export class Game extends Scene {
   createPoints() {
     let name: string = '';
 
-    let scale = 0.15;
+    let scale = 0.2;
 
     if (Math.random() < 0.25) {
       name = `dust`;
@@ -155,7 +164,7 @@ export class Game extends Scene {
     const shoot = this.physics.add.image(this.player.x, this.player.y, 'laser');
     this.Laser.push(shoot);
     shoot.setScale(0.07);
-    shoot.setVelocityX(250);
+    shoot.setVelocityX(400);
 
     this.Points.forEach((r) => {
       this.physics.add.overlap(shoot, r, (a, b) => {
@@ -208,7 +217,43 @@ export class Game extends Scene {
       },
     });
 
-    this.input.addListener('pointerdown', () => {
+    this.input.keyboard.on(
+      'keydown-ENTER',
+      function () {
+        this.createShoot();
+      },
+      this
+    );
+
+    const button = this.add
+      .text(config.width - 30, config.height - 50, '🔥 Shoot', {
+        fontFamily: 'K2D',
+        fontSize: 16,
+        color: '#000000',
+        stroke: '#000000',
+        align: 'center',
+        padding: {
+          top: 12,
+          bottom: 12,
+          left: 12,
+          right: 12,
+        },
+        backgroundColor: '#ffffff',
+      })
+      .setOrigin(1, 1)
+      .setDepth(100);
+
+    this.add
+      .text(config.width - 130, config.height - 40, 'ENTER / Button', {
+        fontFamily: 'K2D',
+        fontSize: 16,
+        color: '#000000',
+        align: 'right',
+      })
+      .setDepth(100);
+
+    button.setInteractive();
+    button.on('pointerdown', () => {
       this.createShoot();
     });
   }
@@ -233,9 +278,7 @@ export class Game extends Scene {
 
     this.healthBar.setSize((this.healthCount / TOTAL_HEALTH) * 150, 20);
 
-    console.log(seed);
     // move player on move
-    this.player.setPosition(this.player.x, this.game.input.mousePointer.y);
 
     // create points and reposite if ends
     if (this.pointCount < POINT_LIMIT) {

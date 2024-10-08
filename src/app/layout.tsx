@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <NextTopLoader color="#ffffff50" />
-      <body className={`antialiased grid justify-center min-h-screen`}>{children}</body>
+      <body className={``}>{children}</body>
     </html>
   );
 }

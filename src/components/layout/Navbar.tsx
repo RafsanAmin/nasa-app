@@ -34,8 +34,9 @@ const Navbar = () => {
       >
         <NavLink href="/">Home</NavLink>
         <NavLink href="/game">Play Game</NavLink>
-        <NavLink href="/details">About PACE</NavLink>
+        <NavLink href="/details">Resources</NavLink>
         <NavLink href="/team">Team Info</NavLink>
+        <NavLink href="/game/stat">Game Stats</NavLink>
       </ul>
       <button className="lg:hidden" onClick={() => setOpen((s) => !s)}>
         {open ? <RxCross2 className="w-7 h-7" /> : <RiMenu3Fill className="w-7 h-7" />}

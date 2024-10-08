@@ -25,16 +25,15 @@ export class GameOver extends Scene {
     this.background.scale = 2;
     this.background.setAlpha(0.8);
 
-    let vid = this.add.video(config.width / 2, 50, 'lvl1');
-    vid.setSize(config.width / 1.5, 300);
-
+    let vid = this.add.video(config.width / 2, 50, 'lvl');
+    vid.setScale(0.7, 0.65);
     vid.play(true);
 
     this.add
       .text(
         config.width / 2,
         config.height - 185,
-        !this.complete ? '😔 Game Over. Finish Level to go to next.' : '🏆 Lvl 1 Completed!',
+        !this.complete ? '😔 Game Over. Finish Level to go to next.' : '🏆 Level Completed!',
         {
           fontFamily: 'K2D',
           fontSize: 24,
@@ -59,7 +58,7 @@ export class GameOver extends Scene {
       .text(
         config.width / 2,
         config.height - 220,
-        'Highest Score:' + (localStorage.getItem('1_1') || '0'),
+        'Highest Score: ' + (localStorage.getItem('2') || '0'),
         {
           fontFamily: 'K2D',
           fontSize: 16,
@@ -96,7 +95,15 @@ export class GameOver extends Scene {
     button.setInteractive();
     button.on('pointerdown', () => {
       if (this.complete) {
-        window.location.href = '/game/ocean/map2';
+        if (!localStorage.getItem('1_1') || !localStorage.getItem('1_2')) {
+          window.location.href = '/game/ocean';
+        } else if (!localStorage.getItem('map1')) {
+          window.location.href = '/game/ocean/map1';
+        } else if (!localStorage.getItem('map2')) {
+          window.location.href = '/game/ocean/map2';
+        } else {
+          window.location.href = '/game/stat';
+        }
       } else {
         this.scene.start('Game');
       }

@@ -10,11 +10,6 @@ const Improve = () => {
         these areas show room for improvement. Targeted practice and study in these fields will help
         them achieve 100% in all categories.
       </p>
-      <div className="pt-4">
-        <Link className="btn-prim " href="/game/leaderboard">
-          See Leaderboards
-        </Link>
-      </div>
     </div>
   );
 };

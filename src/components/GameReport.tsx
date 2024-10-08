@@ -1,9 +1,10 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useState } from 'react';
 
 const Field = ({
   children,
   score,
-  total = 100,
+  total,
   v,
 }: {
   children: React.ReactNode;
@@ -13,38 +14,79 @@ const Field = ({
 }) => {
   const colorVariants = ['bg-primary', 'bg-secondary'];
   return (
-    <div className="flex items-center gap-2 font-bold">
-      <span className="-mt-1 basis-[150px] shrink-0 opacity-75">{children}</span>
+    <div className="flex md:items-center gap-2 font-bold md:flex-row flex-col">
+      <span className="-mt-1 md:basis-[150px] shrink-0 opacity-75">{children}</span>
       <div
         style={{
-          width: `calc(${(score / total) * 100}% - (150px * ${score / total}))`,
+          width: `${
+            total ? `calc(${(score / total) * 100}% - (150px * ${score / total}))` : '60%'
+          }`,
         }}
         className={`h-3 rounded-full ${colorVariants[v]}`}
       ></div>
+      <span className="opacity-80">
+        {score}
+        <span className="text-sm opacity-50">{total ? <>/{total}</> : null}</span>
+      </span>
     </div>
   );
 };
 
 const GameReport = () => {
-  return (
-    <div className="">
-      <h2 className="text-2xl lg:text-3xl text-center font-bold mb-8">GAME REPORT</h2>
-      <div className="space-y-5">
-        <Field score={70} v={0}>
-          Ocean Color
-        </Field>
-        <Field score={20} v={1}>
-          Bio geo Chemistry
-        </Field>
-        <Field score={50} v={0}>
-          Ecology
-        </Field>
-        <Field score={100} v={1}>
-          Carbon Cycle
-        </Field>
+  const [a, aa] = useState(false);
+
+  useEffect(() => {
+    if (window) {
+      aa(true);
+    }
+  }, []);
+
+  if (a) {
+    const gs = (s: string) => {
+      return Number(localStorage.getItem(s));
+    };
+    const gsp = (s: string, p: string) => {
+      const rr = JSON.parse(localStorage.getItem(s));
+      if (rr) {
+        return Number(rr[p]);
+      } else {
+        return 0;
+      }
+    };
+    return (
+      <div className="">
+        <h2 className="text-2xl lg:text-3xl text-center font-bold mb-8">GAME REPORT</h2>
+        <div className="space-y-5">
+          <Field score={gs('1_1')} v={0}>
+            Ocean Game Lvl.1
+          </Field>
+          <Field score={gs('1_2')} v={1}>
+            Ocean Game Lvl.2
+          </Field>
+          <Field score={gsp('map1', 'won')} total={1} v={1}>
+            Ocean Color Map 1
+          </Field>
+          <Field score={gsp('map2', 'score')} total={6} v={0}>
+            Ocean Color Map 2
+          </Field>
+          <Field score={gs('2')} v={0}>
+            Cloud Game
+          </Field>
+          <Field score={gs('section_0')} total={10} v={1}>
+            Harmful Algal Blooms
+          </Field>
+          <Field score={gs('section_1')} total={10} v={0}>
+            Aerosol & Climate
+          </Field>
+          <Field score={gs('section_2')} total={10} v={1}>
+            Carbon Cycle
+          </Field>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  return null;
 };
 
 export default GameReport;

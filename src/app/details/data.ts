@@ -92,6 +92,13 @@ const StudyMaterialData = [
         options: ['Satellites', 'Thermometers', 'Water filters', 'Fishing nets'],
       },
     ],
+    source: [
+      'https://oceanservice.noaa.gov/hazards/hab/#:~:text=Harmful%20algal%20blooms%20(HABs)%20occur,%2C%20marine%20mammals%2C%20and%20birds.',
+      'https://www.niehs.nih.gov/health/topics/agents/algal-blooms',
+      'https://www.nrdc.org/bio/ben-chou/water-pollution-grows-healthy-soil-comes-rescue',
+      'https://www.epa.gov/nutrientpollution/sources-and-solutions-agriculture',
+      'https://www.epa.gov/nutrientpollution',
+    ],
   },
   {
     title: 'AEROSOLS AND CLIMATE',
@@ -195,6 +202,12 @@ const StudyMaterialData = [
         ],
       },
     ],
+
+    source: [
+      'https://science.nasa.gov/science-research/earth-science/pace-mission-will-uncover-new-information-about-health-of-our-oceans/',
+      'https://www.nasa.gov/news-release/new-nasa-mission-to-study-ocean-color-airborne-particles-and-clouds/',
+      'https://earthobservatory.nasa.gov/features/Aerosols/page4.php',
+    ],
   },
   {
     title: 'CARBON CYCLE IN THE OCEAN',
@@ -287,6 +300,8 @@ const StudyMaterialData = [
         correct: 3,
       },
     ],
+
+    source: [],
   },
 ];
 

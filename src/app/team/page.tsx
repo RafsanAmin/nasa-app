@@ -1,5 +1,6 @@
 import Main from '@/components/layout/Main';
 import TeamCard from '@/components/TeamCard';
+import Link from 'next/link';
 
 const Members = [
   {
@@ -47,7 +48,12 @@ export default function Team() {
             curiosity becomes a journey to impact globally.
           </p>
           <div className="mt-1">
-            <button className="btn-prim z-10">Visit</button>
+            <Link
+              href="https://www.spaceappschallenge.org/nasa-space-apps-2024/find-a-team/kugel_blitz/"
+              className="btn-prim z-10"
+            >
+              Visit
+            </Link>
           </div>
         </div>
         <div className="lg:w-[40%] relative flex justify-center">

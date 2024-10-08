@@ -43,15 +43,24 @@ export class Game2 extends Scene {
   }
 
   addPlayer() {
-    this.player = this.physics.add.sprite(config.width / 2, config.height / 2, 'sml_fish_3');
+    this.player = this.physics.add.sprite(config.width / 2 - 100, config.height / 2, 'sml_fish_3');
     this.player.setSize(125, 125);
     this.player.setScale(0.5, 0.5);
     this.createAnim(this.player, 'sml_fish_3');
     // this.player.setCollideWorldBounds(true);
 
-    this.player.on('drag', (p, x, y) => {
-      this.player.y = y;
-    });
+    this.player.setInteractive({ draggable: true });
+    this.player.on('drag', (pointer, dragX, dragY) =>
+      this.player.setPosition(this.player.x, dragY)
+    );
+
+    this.input.on(
+      'pointermove',
+      function (pointer) {
+        this.player.setPosition(this.player.x, pointer.y);
+      },
+      this
+    );
   }
 
   createPoints() {
@@ -179,9 +188,7 @@ export class Game2 extends Scene {
     // set score
     this.score.setText('Score: ' + String(this.scoreCount));
 
-    console.log(seed);
     // move player on move
-    this.player.setPosition(this.player.x, this.game.input.mousePointer.y);
 
     // create points and reposite if ends
     if (this.pointCount < POINT_LIMIT) {
