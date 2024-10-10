@@ -11,6 +11,8 @@ export default function About() {
         <main className="h-full justify-center lg:justify-between flex flex-col-reverse lg:flex-row items-center relative">
           <Carousel
             images={[
+              '/image/details/a0/0.jpg',
+
               '/image/details/a1/0.jpg',
               '/image/details/a2/0.jpg',
               '/image/details/a3/0.jpg',

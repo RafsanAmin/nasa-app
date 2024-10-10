@@ -54,7 +54,6 @@ export class PreGame extends Scene {
         fontFamily: 'K2D',
         fontSize: 16,
         color: '#000000',
-        stroke: '#000000',
         align: 'center',
         padding: {
           top: 12,

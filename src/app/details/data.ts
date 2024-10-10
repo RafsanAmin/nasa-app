@@ -1,5 +1,18 @@
 const StudyMaterialData = [
   {
+    title: 'ABOUT PACE',
+    desc: `The PACE (Plankton, Aerosol, Cloud, ocean Ecosystem) spacecraft is like Earth's superhero, studying our planet’s oceans and atmosphere. It uses super-advanced tools to measure tiny marine organisms called phytoplankton and tracks changes in ocean color. PACE also keeps an eye on aerosols (tiny particles in the air), helping scientists understand climate change and the health of our environment. Think of it as Earth's guardian, collecting data to keep our planet in balance!`,
+    imgURL: '/image/details/a0/0.jpg',
+    source: [
+      'https://pace.oceansciences.org/oci.htm',
+      'https://pace.oceansciences.org/learn/ocispectrum.htm#particlesize',
+      "https://pace.oceansciences.org/spexone.htm#:~:text=PACE's%20SPEXone%20instrument%20is%20a,%2C%20land%20surface%2C%20and%20ocean.",
+      'https://pace.oceansciences.org/harp2.htm',
+      'https://science.nasa.gov/mission/pace/',
+    ],
+    questions: [],
+  },
+  {
     title: 'HARMFUL ALGAL BLOOMS',
     desc: 'These are Algae. When they increase in number rapidly, it’s called algal bloom. Normally, algae are helpful because they make food and oxygen for fish and other water creatures, JUST LIKE TREES!  When this happens, they are called good algae blooms, also known as non-harmful algae blooms. But when they harm our water friends, they are called harmful algae blooms (HABs).',
     imgURL: '/image/details/a1/0.jpg',

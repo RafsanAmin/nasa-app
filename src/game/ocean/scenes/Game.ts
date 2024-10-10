@@ -3,7 +3,7 @@ import config from '@/game/config/config';
 import _L0 from '@/util/leadingzero';
 import { Scene } from 'phaser';
 
-const TIME = 60;
+const TIME = 10;
 const POINT_LIMIT = 20;
 const OBST_LIMIT = 10;
 
@@ -19,7 +19,7 @@ export class Game extends Scene {
   obstCount!: number;
   countdown!: Phaser.GameObjects.Text;
   initTime!: number;
-
+  Sound!: Phaser.Types.Sound;
   constructor() {
     super('Game');
   }
@@ -80,6 +80,8 @@ export class Game extends Scene {
 
     //adding score
     this.physics.add.overlap(this.player, rect, (player, tecta) => {
+      this.sound.add('sp', { loop: false }).play();
+
       this.reposite(tecta);
       this.scoreCount += 5;
     });
@@ -108,6 +110,9 @@ export class Game extends Scene {
     //gameover
 
     this.physics.add.overlap(this.player, rect, (player, tecta) => {
+      this.sound.add('lose', { loop: false }).play();
+      this.Sound.stop();
+
       this.changeScene();
     });
 
@@ -160,12 +165,18 @@ export class Game extends Scene {
             '1_1_hs',
             `${Math.max(this.scoreCount, Number(localStorage.getItem('1_1_hs')))}`
           );
+          this.Sound.stop();
+          this.sound.add('win', { loop: false }).play();
+
           this.changeScene(this.scoreCount !== 0);
         } else {
           this.countdown.setText('Timer: ' + _L0(minutes) + ':' + _L0(seconds));
         }
       },
     });
+
+    this.Sound = this.sound.add('bg', { loop: true, volume: 0.5 });
+    this.Sound.play();
   }
   update(): void {
     // move bg

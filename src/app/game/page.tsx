@@ -17,18 +17,38 @@ const Page = () => {
               src="/image/game/ocean.png"
               alt=""
             />
-            <h2 className="abs-cent text-3xl font-semibold md:text-4xl">OCEAN</h2>
+            <h2 className="abs-cent flex flex-col items-center  text-2xl font-semibold md:text-3xl">
+              OCEAN
+              <span className="text-xl md:text-2xl font-normal">Explorer</span>
+            </h2>
           </Link>
           <Link
             href="/game/cloud"
             className="w-full sm:w-1/2 max-w-[300px] grid place-items-center relative rounded-full group cursor-pointer transition active:scale-90"
           >
             <img
-              className="w-full max-h-[25vh] sm:max-h-none  object-contain  flex-1  rotate-90  transition group-hover:brightness-75"
+              className="w-full max-h-[25vh] sm:max-h-none  object-contain  flex-1  transition group-hover:brightness-75"
               src="/image/game/cloud.png"
               alt=""
             />
-            <h2 className="abs-cent text-3xl font-semibold md:text-4xl">CLOUD</h2>
+            <h2 className="abs-cent flex flex-col items-center  text-2xl font-semibold md:text-3xl">
+              CLOUD
+              <span className="text-xl md:text-2xl font-normal">Heroes</span>
+            </h2>
+          </Link>
+          <Link
+            href="/game/ocean/map1"
+            className="w-full sm:w-1/2 max-w-[300px] grid place-items-center relative rounded-full group cursor-pointer transition active:scale-90"
+          >
+            <img
+              className="w-full max-h-[25vh] sm:max-h-none  object-contain  flex-1  transition group-hover:brightness-75"
+              src="/image/game/map.png"
+              alt=""
+            />
+            <h2 className="abs-cent flex flex-col items-center  text-2xl font-semibold md:text-3xl">
+              AQUA
+              <span className="text-xl md:text-2xl font-normal">Quest</span>
+            </h2>
           </Link>
         </div>
         <img

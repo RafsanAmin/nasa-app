@@ -51,6 +51,13 @@ export class Preloader extends Scene {
     });
 
     this.load.video('lvl', '0001-0060.mp4');
+
+    this.load.audio('hurt', 'cloud/hurt.wav');
+    this.load.audio('laser', 'cloud/laser.mp3');
+    this.load.audio('hit', 'cloud/hit.mp3');
+    this.load.audio('bg', 'cloud/bg.mp3');
+    this.load.audio('win', 'cloud/win.mp3');
+    this.load.audio('lose', 'cloud/lose.mp3');
   }
 
   create() {

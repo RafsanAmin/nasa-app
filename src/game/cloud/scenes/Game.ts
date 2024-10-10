@@ -3,7 +3,7 @@ import config from '@/game/config/config';
 import _L0 from '@/util/leadingzero';
 import { Scene } from 'phaser';
 
-const TIME = 120;
+const TIME = 10;
 const POINT_LIMIT = 20;
 const OBST_LIMIT = 4;
 const TOTAL_HEALTH = 10;
@@ -25,6 +25,7 @@ export class Game extends Scene {
   healthCount!: number;
   healthBar!: Phaser.GameObjects.Rectangle;
   offOverlap!: boolean;
+  Sound!: Phaser.Types.Sound;
 
   constructor() {
     super('Game');
@@ -112,6 +113,8 @@ export class Game extends Scene {
         this.player.setAlpha(0.3);
         this.healthCount--;
         this.offOverlap = true;
+        this.sound.add('hurt', { loop: false }).play();
+
         setTimeout(() => {
           this.player.setAlpha(1);
           this.offOverlap = false;
@@ -141,6 +144,8 @@ export class Game extends Scene {
     //gameover
 
     this.physics.add.overlap(this.player, rect, (player, tecta) => {
+      this.sound.add('lose', { loop: false }).play();
+      this.Sound.stop();
       this.changeScene();
     });
 
@@ -165,9 +170,11 @@ export class Game extends Scene {
     this.Laser.push(shoot);
     shoot.setScale(0.07);
     shoot.setVelocityX(400);
+    this.sound.add('laser', { loop: false }).play();
 
     this.Points.forEach((r) => {
       this.physics.add.overlap(shoot, r, (a, b) => {
+        this.sound.add('hit', { loop: false }).play();
         a.destroy();
         this.reposite(b);
         this.scoreCount += 1;
@@ -209,6 +216,9 @@ export class Game extends Scene {
         const seconds = Math.floor((elapsedTime / (1000 * 60) - minutes) * 60);
 
         if (elapsedTime <= 0) {
+          this.Sound.stop();
+          this.sound.add('win', { loop: false }).play();
+
           this.changeScene(this.scoreCount !== 0);
           this.setStorage();
         } else {
@@ -256,6 +266,9 @@ export class Game extends Scene {
     button.on('pointerdown', () => {
       this.createShoot();
     });
+
+    this.Sound = this.sound.add('bg', { loop: true, volume: 0.5 });
+    this.Sound.play();
   }
 
   setStorage() {

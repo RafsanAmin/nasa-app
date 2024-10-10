@@ -5,9 +5,10 @@ import One from './StudyMaterial/1';
 import Two from './StudyMaterial/2';
 import Three from './StudyMaterial/3';
 import Sources from '@/components/Sources';
+import About from './About';
 
-export default function About({ params }: { params: { id: string } }) {
-  const index = Number(params.id);
+export default function Detail({ params }: { params: { id: string } }) {
+  const index = params.id === 'about' ? 0 : Number(params.id);
   const Data = StudyMaterialData[index];
   return (
     <>
@@ -30,7 +31,15 @@ export default function About({ params }: { params: { id: string } }) {
         </main>
       </Main>
       <div className="w-[85vw] mx-auto detail">
-        {index === 0 ? <One /> : index === 1 ? <Two /> : index === 2 ? <Three /> : null}
+        {index === 1 ? (
+          <One />
+        ) : index === 2 ? (
+          <Two />
+        ) : index === 3 ? (
+          <Three />
+        ) : index === 0 ? (
+          <About />
+        ) : null}
       </div>
 
       {Data.source && Data.source.length > 0 ? (
@@ -38,9 +47,11 @@ export default function About({ params }: { params: { id: string } }) {
           <Sources sources={Data.source} />
         </div>
       ) : null}
-      <div className=" w-[85vw] mx-auto mx-auto mt-4 mb-32">
-        <Quiz Data={Data} indexD={index} />
-      </div>
+      {Data.questions.length > 0 ? (
+        <div className=" w-[85vw] mx-auto mx-auto mt-4 mb-32">
+          <Quiz Data={Data} indexD={index} />
+        </div>
+      ) : null}
     </>
   );
 }

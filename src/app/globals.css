@@ -80,9 +80,7 @@ h6 {
   .btn-prim {
     @apply inline-block text-black bg-white py-3 px-8 rounded-full shadow-md transition hover:bg-white/80 active:shadow-none active:scale-90;
   }
-}
 
-@layer components {
   .detail article {
     @apply my-8 text-white sm:mx-4;
   }
@@ -102,8 +100,8 @@ h6 {
   .detail .a3 {
     @apply grid xl:grid-cols-[auto_1fr_auto] gap-8 items-center;
   }
-  .detail img {
-    @apply w-full h-full rounded-xl max-w-[675px] mx-auto max-h-[900px] lg:max-w-[300px] 2xl:max-w-[450px] 2xl:max-h-[600px] lg:max-h-[400px];
+  .detail article > img {
+    @apply w-full h-full rounded-xl max-w-[675px] object-cover mx-auto max-h-[900px] lg:max-w-[300px] 2xl:max-w-[450px] 2xl:max-h-[600px] lg:max-h-[400px];
   }
 
   @media only screen and (max-width: 1280px) and (min-width: 1024px) {
@@ -144,6 +142,9 @@ h6 {
   .detail b {
     @apply text-lg;
   }
+}
+
+@layer components {
 }
 
 html {

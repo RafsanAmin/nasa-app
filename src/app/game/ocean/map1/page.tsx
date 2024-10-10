@@ -117,7 +117,7 @@ export default function About() {
           <Carousel images={slides} tight={true} />
           <p className="flex gap-2 items-center mt-4 text-xl sm:text-2xl px-4 pt-2 pb-3 border-2 border-secondary rounded-full">
             <BiMouse className="w-6 h-6 text-secondary" />
-            Play Game <span className="text-secondary">↓</span>
+            Play Game <span className="text-secondary animate-bounce">↓</span>
           </p>
         </main>
       </Main>

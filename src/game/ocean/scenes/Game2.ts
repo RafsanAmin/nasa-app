@@ -3,7 +3,7 @@ import config from '@/game/config/config';
 import _L0 from '@/util/leadingzero';
 import { Scene } from 'phaser';
 
-const TIME = 60;
+const TIME = 10;
 const POINT_LIMIT = 25;
 const OBST_LIMIT = 5;
 
@@ -19,6 +19,7 @@ export class Game2 extends Scene {
   obstCount!: number;
   countdown!: Phaser.GameObjects.Text;
   initTime!: number;
+  Sound!: Phaser.Types.Sound;
 
   constructor() {
     super('Game2');
@@ -90,7 +91,11 @@ export class Game2 extends Scene {
     //adding score
     this.physics.add.overlap(this.player, rect, (player, tecta) => {
       this.reposite(tecta);
-
+      if (p === 'ppl') {
+        this.sound.add('sp', { loop: false }).play();
+      } else {
+        this.sound.add('bp', { loop: false }).play();
+      }
       this.scoreCount += scoreInc;
     });
 
@@ -119,6 +124,8 @@ export class Game2 extends Scene {
 
     this.physics.add.overlap(this.player, rect, (player, tecta) => {
       this.changeScene();
+      this.sound.add('lose', { loop: false }).play();
+      this.Sound.stop();
     });
 
     rect?.body?.setVelocityX(-250);
@@ -167,11 +174,17 @@ export class Game2 extends Scene {
         if (elapsedTime <= 0) {
           this.setStorage();
           this.changeScene(this.scoreCount !== 0);
+
+          this.Sound.stop();
+          this.sound.add('win', { loop: false }).play();
         } else {
           this.countdown.setText('Timer: ' + _L0(minutes) + ':' + _L0(seconds));
         }
       },
     });
+
+    this.Sound = this.sound.add('bg', { loop: true, volume: 0.5 });
+    this.Sound.play();
   }
 
   setStorage() {

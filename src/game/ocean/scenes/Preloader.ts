@@ -94,6 +94,12 @@ export class Preloader extends Scene {
     });
     this.load.video('lvl1', '0001-0075.mp4');
     this.load.video('lvl2', '0001-0076.mp4');
+
+    this.load.audio('sp', 'ocean/se.mp3');
+    this.load.audio('bp', 'ocean/be.mp3');
+    this.load.audio('bg', 'ocean/bg.mp3');
+    this.load.audio('win', 'ocean/win.mp3');
+    this.load.audio('lose', 'ocean/lose.mp3');
   }
 
   create() {

@@ -28,8 +28,8 @@ const Navbar = () => {
         KUGELBLITZ
       </Link>
       <ul
-        className={`flex gap-8 lg:gap-12 lg:shadow-none bg-[#40a5a2] shadow-md lg:bg-transparent lg:backdrop-blur-none transition  top-[5rem] right-[2.5rem] px-12 py-8 lg:p-0 rounded-xl  font-medium flex-col lg:flex-row text-center absolute lg:static origin-top-right z-30 ${
-          open ? 'scale-100' : 'scale-0 pointer-events-none lg:scale-100 lg:pointer-events-auto'
+        className={`flex gap-8 xl:gap-12 xl:shadow-none bg-[#40a5a2] shadow-md xl:bg-transparent xl:backdrop-blur-none transition  top-[5rem] right-[2.5rem] px-12 py-8 xl:p-0 rounded-xl  font-medium flex-col xl:flex-row text-center absolute xl:static origin-top-right z-30 ${
+          open ? 'scale-100' : 'scale-0 pointer-events-none xl:scale-100 xl:pointer-events-auto'
         }`}
       >
         <NavLink href="/">Home</NavLink>
@@ -38,7 +38,7 @@ const Navbar = () => {
         <NavLink href="/team">Team Info</NavLink>
         <NavLink href="/game/stat">Game Stats</NavLink>
       </ul>
-      <button className="lg:hidden" onClick={() => setOpen((s) => !s)}>
+      <button className="xl:hidden" onClick={() => setOpen((s) => !s)}>
         {open ? <RxCross2 className="w-7 h-7" /> : <RiMenu3Fill className="w-7 h-7" />}
       </button>
     </nav>
