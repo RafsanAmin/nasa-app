@@ -3,7 +3,7 @@ import config from '@/game/config/config';
 import _L0 from '@/util/leadingzero';
 import { Scene } from 'phaser';
 
-const TIME = 10;
+const TIME = 60;
 const POINT_LIMIT = 20;
 const OBST_LIMIT = 10;
 
