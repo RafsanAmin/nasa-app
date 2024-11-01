@@ -29,7 +29,7 @@ export class Preloader extends Scene {
 
     this.load.image('background', 'sky.jpg');
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 15; i++) {
       this.load.image('s_' + i, `/c/${i + 1}.JPG`);
     }
 

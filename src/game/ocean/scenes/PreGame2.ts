@@ -2,7 +2,7 @@ import config from '@/game/config/config';
 import { EventBus } from '../EventBus';
 import { Scene } from 'phaser';
 
-const MAX_STATE = 4;
+const MAX_STATE = 7;
 
 export class PreGame2 extends Scene {
   camera!: Phaser.Cameras.Scene2D.Camera;
@@ -25,7 +25,7 @@ export class PreGame2 extends Scene {
     this.slide = this.add
       .image(config.width / 2, 20, '2_s_0')
       .setOrigin(0.5, 0)
-      .setScale(0.625);
+      .setScale(0.15);
     const button = this.add
       .text(config.width - 100, config.height - 50, '🎮 Start', {
         fontFamily: 'K2D',

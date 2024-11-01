@@ -14,8 +14,8 @@ import sources from '../mapsources';
 
 const slides: string[] = [];
 
-for (let i = 0; i < 7; i++) {
-  slides.push(`/assets/map/2/${i + 1}.JPG`);
+for (let i = 0; i < 14; i++) {
+  slides.push(`/assets/map/2/${i + 1}.png`);
 }
 
 export default function About() {

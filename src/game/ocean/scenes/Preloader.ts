@@ -36,11 +36,11 @@ export class Preloader extends Scene {
       frameHeight: 216,
     });
 
-    for (let i = 0; i < 4; i++) {
-      this.load.image('1_s_' + i, `/o_1/${i + 1}.JPG`);
+    for (let i = 0; i < 12; i++) {
+      this.load.image('1_s_' + i, `/o_1/${i + 1}.png`);
     }
-    for (let i = 0; i < 4; i++) {
-      this.load.image('2_s_' + i, `/o_2/${i + 1}.JPG`);
+    for (let i = 0; i < 7; i++) {
+      this.load.image('2_s_' + i, `/o_2/${i + 1}.png`);
     }
 
     this.load.spritesheet('zpl1', 'zpl 1.png', {
