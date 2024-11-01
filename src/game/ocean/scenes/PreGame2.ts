@@ -53,8 +53,8 @@ export class PreGame2 extends Scene {
       .text(config.width / 2, config.height - 75, 'Instruction 1 of ' + MAX_STATE, {
         fontFamily: 'K2D',
         fontSize: 16,
-        color: '#000000',
-        stroke: '#000000',
+        color: '#ffffff',
+        stroke: '#ffffff',
         align: 'center',
         padding: {
           top: 12,
