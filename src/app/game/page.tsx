@@ -6,7 +6,7 @@ const Page = () => {
   return (
     <Main>
       <main className="h-full w-full relative flex flex-col justify-center sm:gap-8 gap-4 py-8">
-        <h1 className="text-3xl md:text-4xl text-center font-bold opacity-90">CHOOSE A JOURNY</h1>
+        <h1 className="text-3xl md:text-4xl text-center font-bold opacity-90">CHOOSE A JOURNEY</h1>
         <div className="flex flex-col sm:flex-row sm:gap-8 gap-4 justify-center items-center z-10">
           <Link
             href="/game/ocean"
