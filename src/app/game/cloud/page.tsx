@@ -44,13 +44,16 @@ const Page = ({ searchParams }: { searchParams: { fullscreen: any } }) => {
             <div className="flex-1 grid place-items-center pt-3 overflow-y-hidden">
               <Game />
             </div>
-            <p className="flex gap-2 items-center justify-center mt-4 text-center text-xl">
+            <Link
+              href="#info"
+              className="flex gap-2 items-center justify-center mt-4 text-center text-xl"
+            >
               <BiMouse className="w-6 h-6 text-secondary" />
               Info Sources<span className="text-secondary">↓</span>
-            </p>
+            </Link>
           </Main>
 
-          <div className="w-[85vw] mx-auto mb-12">
+          <div id="info" className="w-[85vw] mx-auto mb-12">
             <Sources sources={SOURCES} />
           </div>
         </>

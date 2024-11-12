@@ -9,6 +9,7 @@ export class PreGame2 extends Scene {
   background!: Phaser.GameObjects.Image;
   slide!: Phaser.GameObjects.Image;
   state: number = 0;
+  Sound!: Phaser.Types.Sound;
 
   constructor() {
     super('PreGame2');
@@ -21,6 +22,9 @@ export class PreGame2 extends Scene {
     this.background = this.add.image(0, 0, 'background2');
     this.background.scale = 2;
     this.background.setAlpha(0.8);
+
+    this.Sound = this.sound.add('bgp', { loop: true, volume: 0.5 });
+    this.Sound.play();
 
     this.slide = this.add
       .image(config.width / 2, 20, '2_s_0')
@@ -46,11 +50,13 @@ export class PreGame2 extends Scene {
 
     button.setInteractive();
     button.on('pointerdown', () => {
+      this.Sound.stop();
+
       this.scene.start('Game2');
     });
 
     const st = this.add
-      .text(config.width / 2, config.height - 75, 'Instruction 1 of ' + MAX_STATE, {
+      .text(config.width / 2, config.height - 50, 'Instruction 1 of ' + MAX_STATE, {
         fontFamily: 'K2D',
         fontSize: 16,
         color: '#ffffff',

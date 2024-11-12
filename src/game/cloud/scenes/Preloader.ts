@@ -58,6 +58,8 @@ export class Preloader extends Scene {
     this.load.audio('bg', 'cloud/bg.mp3');
     this.load.audio('win', 'cloud/win.mp3');
     this.load.audio('lose', 'cloud/lose.mp3');
+
+    this.load.audio('bgp', 'pregame.mp3');
   }
 
   create() {

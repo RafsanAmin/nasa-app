@@ -115,16 +115,22 @@ export default function About() {
             <p>Read Instructions from this slide to play game below. Click to full view.</p>
           </div>
           <Carousel images={slides} tight={true} />
-          <p className="flex gap-2 items-center mt-4 text-xl sm:text-2xl px-4 pt-2 pb-3 border-2 border-secondary rounded-full">
+          <Link
+            href="#game"
+            className="flex gap-2 items-center mt-4 text-xl sm:text-2xl px-4 pt-2 pb-3 border-2 border-secondary rounded-full"
+          >
             <BiMouse className="w-6 h-6 text-secondary" />
             Play Game <span className="text-secondary animate-bounce">↓</span>
-          </p>
+          </Link>
         </main>
       </Main>
-      <div className=" w-[85vw] mx-auto mx-auto mt-16 mb-32">
-        <h1 className="text-3xl font-bold text-center">GAME</h1>
+      <div className=" w-[85vw] mx-auto  mt-16 mb-32">
+        <h1 id="game" className="text-3xl font-bold text-center">
+          GAME
+        </h1>
         <p className="text-center mb-4">
-          Click on marked based on what instructed above! In mobile please 🔄️ rotate your screen.
+          Click on the marked points based on what is instructed above! In mobile, please 🔄️ rotate
+          your screen.
         </p>
         {storage?.won ? <p className="text-center mb-4">🎉 You won the game!</p> : null}
 
@@ -160,7 +166,7 @@ export default function About() {
             }
           ></div>
 
-          <img className="w-full " src="/assets/map/1/map.png" />
+          <img className="w-full " src="/assets/map/1/map.png" alt="" />
         </div>
         <div className="flex gap-5 justify-center pt-12">
           <div className="w-10 h-10 grid place-items-center bg-black/30 rounded-lg">

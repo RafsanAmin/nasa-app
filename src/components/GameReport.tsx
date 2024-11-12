@@ -19,7 +19,11 @@ const Field = ({
       <div
         style={{
           width: `${
-            total ? `calc(${(score / total) * 100}% - (150px * ${score / total}))` : '60%'
+            total
+              ? `calc(${(score / total) * 100}% - (150px * ${score / total}))`
+              : score === 0
+              ? '0%'
+              : '60%'
           }`,
         }}
         className={`h-3 rounded-full ${colorVariants[v]}`}

@@ -2,13 +2,14 @@ import config from '@/game/config/config';
 import { EventBus } from '../EventBus';
 import { Scene } from 'phaser';
 
-const MAX_STATE = 12;
+const MAX_STATE = 13;
 
 export class PreGame extends Scene {
   camera!: Phaser.Cameras.Scene2D.Camera;
   background!: Phaser.GameObjects.Image;
   slide!: Phaser.GameObjects.Image;
   state: number = 0;
+  Sound!: Phaser.Types.Sound;
 
   constructor() {
     super('PreGame');
@@ -21,6 +22,9 @@ export class PreGame extends Scene {
     this.background = this.add.image(0, 0, 'background');
     this.background.scale = 2;
     this.background.setAlpha(0.8);
+
+    this.Sound = this.sound.add('bgp', { loop: true, volume: 0.5 });
+    this.Sound.play();
 
     this.slide = this.add
       .image(config.width / 2, 20, '1_s_0')
@@ -46,15 +50,16 @@ export class PreGame extends Scene {
 
     button.setInteractive();
     button.on('pointerdown', () => {
+      this.Sound.stop();
       this.scene.start('Game');
     });
 
     const st = this.add
-      .text(config.width / 2, config.height - 75, 'Instruction 1 of ' + MAX_STATE, {
+      .text(config.width / 2, config.height - 50, 'Instruction 1 of ' + MAX_STATE, {
         fontFamily: 'K2D',
         fontSize: 16,
+        backgroundColor: '#3288b8',
         color: '#000000',
-        stroke: '#000000',
         align: 'center',
         padding: {
           top: 12,

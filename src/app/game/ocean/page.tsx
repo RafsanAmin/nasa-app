@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import Main from '@/components/layout/Main';
 import Sources from '@/components/Sources';
 import { BiMouse } from 'react-icons/bi';
+import Link from 'next/link';
 
 const Game = dynamic(() => import('@/game/ocean/OceanGame'), { ssr: false });
 const SOURCES = [
@@ -43,13 +44,16 @@ const Page = ({ searchParams }: { searchParams: { fullscreen: any } }) => {
             <div className="flex-1 grid place-items-center pt-3">
               <Game />
             </div>
-            <p className="flex gap-2 items-center justify-center mt-4 text-center overflow-y-hidden text-xl">
+            <Link
+              href="#info"
+              className="flex gap-2 items-center justify-center mt-4 text-center overflow-y-hidden text-xl"
+            >
               <BiMouse className="w-6 h-6 text-secondary" />
               Info Sources<span className="text-secondary">↓</span>
-            </p>
+            </Link>
           </Main>
 
-          <div className="w-[85vw] mx-auto mb-12">
+          <div id="info" className="w-[85vw] mx-auto mb-12">
             <Sources sources={SOURCES} />
           </div>
         </>

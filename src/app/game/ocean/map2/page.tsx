@@ -117,16 +117,21 @@ export default function About() {
             <p>Read Instructions from this slide to play game below. Click to full view.</p>
           </div>
           <Carousel images={slides} tight={true} />
-          <p className="flex gap-2 items-center mt-4 text-xl sm:text-2xl px-4 pt-2 pb-3 border-2 border-secondary rounded-full">
+          <Link
+            href="#game"
+            className="flex gap-2 items-center mt-4 text-xl sm:text-2xl px-4 pt-2 pb-3 border-2 border-secondary rounded-full"
+          >
             <BiMouse className="w-6 h-6 text-secondary" />
             Play Game <span className="text-secondary animate-bounce">↓</span>
-          </p>
+          </Link>
         </main>
       </Main>
-      <div className=" w-[85vw] mx-auto mx-auto mt-16 mb-32">
-        <h1 className="text-3xl font-bold text-center">GAME</h1>
+      <div className=" w-[85vw] mx-auto mt-16 mb-32">
+        <h1 id="game" className="text-3xl font-bold text-center">
+          GAME
+        </h1>
         <p className="text-center mb-4">
-          Click on 📍 pinpointed areas to know there relation in them! In mobile please 🔄️ rotate
+          click on the 📍 pinpointed areas to view each detective case! In mobile, please 🔄️ rotate
           your screen.
         </p>
         {storage?.score === 6 ? <p className="text-center mb-4">🎉 You won the game!</p> : null}
@@ -189,7 +194,7 @@ export default function About() {
             <FaCheckCircle className="w-4 h-4 text-green-500  bg-white rounded-full " />
           </div>
 
-          <img className="w-full " src="/assets/map/2/map.jpg" />
+          <img className="w-full " src="/assets/map/2/map.jpg" alt="" />
         </div>
         {storage?.score === 6 ? (
           <div className="flex justify-center w-full mt-12">

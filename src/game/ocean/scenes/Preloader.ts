@@ -36,7 +36,7 @@ export class Preloader extends Scene {
       frameHeight: 216,
     });
 
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 13; i++) {
       this.load.image('1_s_' + i, `/o_1/${i + 1}.png`);
     }
     for (let i = 0; i < 7; i++) {
@@ -100,6 +100,8 @@ export class Preloader extends Scene {
     this.load.audio('bg', 'ocean/bg.mp3');
     this.load.audio('win', 'ocean/win.mp3');
     this.load.audio('lose', 'ocean/lose.mp3');
+
+    this.load.audio('bgp', 'pregame.mp3');
   }
 
   create() {

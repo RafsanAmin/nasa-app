@@ -9,7 +9,7 @@ export class PreGame extends Scene {
   background!: Phaser.GameObjects.Image;
   slide!: Phaser.GameObjects.Image;
   state: number = 0;
-
+  Sound!: Phaser.Types.Sound;
   constructor() {
     super('PreGame');
   }
@@ -21,6 +21,9 @@ export class PreGame extends Scene {
     this.background = this.add.image(0, 0, 'background');
     this.background.scale = 2;
     this.background.setAlpha(0.8);
+
+    this.Sound = this.sound.add('bgp', { loop: true, volume: 0.5 });
+    this.Sound.play();
 
     this.slide = this.add
       .image(config.width / 2, 20, 's_0')
@@ -47,6 +50,8 @@ export class PreGame extends Scene {
 
     button.setInteractive();
     button.on('pointerdown', () => {
+      this.Sound.stop();
+
       this.scene.start('Game');
     });
 
@@ -55,6 +60,7 @@ export class PreGame extends Scene {
         fontFamily: 'K2D',
         fontSize: 16,
         color: '#000000',
+        backgroundColor: '#a8bccc',
         align: 'center',
         padding: {
           top: 12,
