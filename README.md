@@ -1,71 +1,63 @@
-Are you ready to immerse yourself in the electrifying pulse of modern technology? Does the thrill of cutting-edge innovations and geeky breakthroughs light a fire within you? If you’re nodding in excitement, then get set, because Thynk 3.0 is here to blow your mind and supercharge your tech game!
-Prepare yourself for an adrenaline-packed experience filled with mind-bending challenges and opportunities to showcase your tech-savvy skills. Whether you’re competing solo or teaming up with your favorite squad, Thynk 3.0 promises an unforgettable adventure through a wide array of exhilarating events.
-Whether you're a solo tech enthusiast or a team player with your favorite crew, Thynk 3.0 offers a range of electrifying events that will push your skills to the limit. From intense problem-solving to showcasing technical brilliance, this is your stage to shine.
-Get an awesome experience with our exciting events.
-- Tech Quiz
-- IT Olympiad
-- Technical Article Writing
-- Programming Contest
-- Cipher-Decipher
-- Robotics Olympiad
+# Kugel_Blitz
 
-## Eligibility: NDC Batch ‘26
+### Nasa Sapce Apps Challange 2024
 
-# Schedule
-- Deadline for article submission: 12 October 2024
-- Practice Problems for Programming contest : 14 October ,2024 (@3pm onwards)
-- Programming Contest: 14 October, 2024 (@7:00 pm)
-- Cipher-Decipher : 15 October , 2024 (@3pm)
-- IT Olympiad : 15 October, 2024 (@4:30 pm)
-- Tech Quiz. : 15 October, 2024 (@7.00 pm)
+This is the official repository for the project submitted to the NASA Space Apps Challenge.
 
-Register Now!
-Tech Quiz
-IT Olympiad
-Technical Article Writing
-Programming Contest
-A detailed overview is provided below:
+## Project Demo
 
-# 𝗧𝗲𝗰𝗵 𝗤𝘂𝗶𝘇:
-### Schedule: 15 October, 2024 (@7.00 pm)
-Each team will have to give answers to some questions related to tech. The contest will be hosted on our clubsite . This is a team-based event with a maximum 3 participants [solo is allowed]
-Link to the contest will be mailed to the provided address of the student.
-The backup phone number must not be of the same person that signed into this form. It will be primarily used to reach out to the team in case the others fail.
-#### Registration Link: https://nditc.net/club
+https://www.youtube.com/watch?v=DrTlTUmkmek&amp;feature=youtu.be
 
-# 𝗧𝗲𝗰𝗵𝗻𝗶𝗰𝗮𝗹 𝗔𝗿𝘁𝗶𝗰𝗹𝗲 𝗪𝗿𝗶𝘁𝗶𝗻𝗴:
-### Deadline for article submission: 12 October 2024
-This is a solo submission-based event.
-Make sure that the article does not surpass 1000 words in length.
-Submit the softcopy of your article in PDF format and attach the file with this form
-Participants have to rename the files accordingly: name_collegeRoll
-Try not to copy your article from anywhere or make a mixture of different sources directly. Be unique, be creative, and have fun!
-Plagiarism of any form is strictly prohibited. Any detected instances of plagiarism will result in the immediate suspension of the participant
-.
-### Topic: “Aspects of AI automation”
+## Final Project
 
-#### Registration & submission Link: https://forms.gle/1W87E9g1ro47cunJ8
+https://pace-kugelblitz.vercel.app/
 
-# 𝗣𝗿𝗼𝗴𝗿𝗮𝗺𝗺𝗶𝗻𝗴 𝗖𝗼𝗻𝘁𝗲𝘀𝘁:
-The contest will be hosted on Toph [https://toph.co/] .
-Schedule: 14 October, 2024 (@7:00 pm)
-A Toph account is required to participate and fill out this form.
-A passphrase will be sent to the email address that will be used to access the contest.
-#### Registration Link: It will provided prior to the contest.
+![upload_image.17:08:03.638540](https://assets.spaceappschallenge.org/media/images/home_YNYCvoE.width-1024.png)
 
-# 𝗜𝗧 𝗢𝗹𝘆𝗺𝗽𝗶𝗮𝗱:
-### Type: Solo
+Our project features an immersive web-based interactive game designed to boost students' ocean and atmospheric literacy through engaging exploration of PACE data.
 
-### Schedule: 15 October, 2024 (@4:30 pm))
-Instruction:
-The contest will be hosted on our club site.
-The contest link will be given to you via email. Thus it is requested to check your email inbox or spam on the day of contest.
-To complete your registration, please ensure that you provide all your information in this form correctly.
-#### Registration Link: https://nditc.net/club
+![upload_image.17:09:56.428475](https://assets.spaceappschallenge.org/media/images/level_W0eJ88H.width-1024.png)
 
-# 𝗖𝗶𝗽𝗵𝗲𝗿- 𝗗𝗲𝗰𝗶𝗽𝗵𝗲𝗿:
-### Type: Solo
-### Schedule : 15 October , 2024 (@3pm)
-The contest will be hosted on our club site.
-"Decipher" refers to the process of interpreting, understanding, or translating something that is difficult to understand. It involves solving or decoding hidden messages in encrypted information. Decipher is an engaging segment where one must think not only critically but also strategically. One should be wise enough to know what to look for. Participants have to discover the messages hidden in the ciphers and thus strategy is key. Participants will be judged on the basis of how many messages they could figure out and how complex the encrypted version was .
-#### Registration Link: https://nditc.net/club
+In this game, players embark on two distinct journeys: Map Ocean and Map Cloud. Each journey unfolds across multiple levels, where players encounter prompts that vividly introduce them to the NASA PACE project.
+
+These prompts provide essential data needed to tackle challenges and progress through the levels. As players navigate through the game, they must leverage the provided data to overcome obstacles and advance.
+
+![upload_image.20:02:50.883681](https://assets.spaceappschallenge.org/media/images/prompt_osEUaKU.width-1024.jpg)
+![img](https://assets.spaceappschallenge.org/media/images/image_L1MmUSc.width-1024.png)
+(students using the information on aerosols and helping in clearing the ocean view)
+
+Upon completing the game, participants receive a comprehensive game report detailing their performance. This report highlights the data which are successfully utilized and identifies areas for improvement, and then this report will be added to the leaderboards.
+
+![upload_image.17:12:19.106205](https://assets.spaceappschallenge.org/media/images/game_report.width-1024.png)
+
+![upload_image.17:19:30.669387](https://assets.spaceappschallenge.org/media/images/about_pace_vF7bKhI.width-500.png)
+
+Our website also includes a dedicated webpage featuring the PACE project profile, offering valuable insights for students, educators, researchers, and the general public. In that webpage, we are including study materials on key scientific topics like Harmful Algal Blooms (HABs), the carbon cycle, and how aerosols and clouds affect our climate. We’ll be regularly updating the content to stay in sync with the latest discoveries from the PACE mission! This resource will support further learning and inspire future projects related to the NASA mission.
+
+## Highlighted Features
+
+- Interactive gaming experience for hands-on learning
+- Captivating prompts to engage students
+- Intuitive, user-friendly and easy-to-use interface
+- Comprehensive study materials, such as lesson plans and multiple-choice questions
+- Incorporation of data from NASA's PACE satellite along with data from other space agencies.
+
+## Team Members & Their Roles
+
+1. Ahammad Shawki - UI/UX Designer
+2. Mumtahina Ambrin - Content Writer
+3. Minhaz Mehedi - Animator
+4. HRM Rafsan Amin - Web Developer
+5. Hasan Farhan - Video Editor
+6. Fawziah Adiba - PPT Designer
+
+## Tech Stack & Tools
+
+- Web Framework: Next.js (on top of React.js) [Typescript Version]
+- Styling Framwork: Tailwind CSS
+- Game Engine: Phaser.js
+- Animation & Sprites: Blender
+- Video Editing & Design: Premiere Pro
+- Prototyping: Figma
+- Presentation Slides: Canva
+- Graphics Designing: Illustrator
